@@ -14,7 +14,14 @@
 
 ifeq ($(findstring galaxytab, $(TARGET_DEVICE)),galaxytab)
 
-include $(call all-named-subdir-makefiles, setup_fs libcamera ../aries-common/sec_mm ../aries-common/libstagefrighthw liboverlay libaudio liblights)
+LOCAL_PATH:= $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := setup_fs.c
+LOCAL_MODULE := setup_fs
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_EXECUTABLE)
 
 endif
+
 
