@@ -1,4 +1,6 @@
-# this is just a camera stub to link with, real one is copied from proprietary
+# this is a camera wrapper, largely kanged from aries-common
+# it adapts parameters set by CyanogenMod to little different ones supported by Samsung's libcamera
+# it wrap arounds libsamsungcamera.so which is renamed Samsung's libcamera
 
 ifeq ($(findstring galaxytab, $(TARGET_DEVICE)),galaxytab)
 
@@ -12,18 +14,14 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
+LOCAL_MODULE:= libcamera
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_SRC_FILES:=               \
-    CameraHardwareStub.cpp      \
-    FakeCamera.cpp
+LOCAL_SRC_FILES:= LibCameraWrapper.cpp
 
-LOCAL_MODULE:= libcamera
-LOCAL_SHARED_LIBRARIES:= libutils libui liblog libbinder libcutils libcamera_client
+LOCAL_SHARED_LIBRARIES:= libdl libutils libcutils libcamera_client
 
-ifeq ($(BOARD_CAMERA_USE_GETBUFFERINFO),true)
-LOCAL_CFLAGS += -DUSE_GETBUFFERINFO
-endif
+LOCAL_PRELINK_MODULE := false
 
 include $(BUILD_SHARED_LIBRARY)
 
