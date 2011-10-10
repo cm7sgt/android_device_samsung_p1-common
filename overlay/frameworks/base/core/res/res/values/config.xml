@@ -142,6 +142,9 @@
     <!-- The default iface on which to monitor data use -->
     <string name="config_datause_iface">pdp0</string>
 
+    <!-- galaxytab doesn't handle this blur effect very quickly. -->
+    <bool name="config_sf_slowBlur">true</bool>
+
     <!-- toggles whether device is tablet or phone. right now,
     tablets are know to have soft buttons, but phones have harware
     buttons. this might change in the future - especially when the
