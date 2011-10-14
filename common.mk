@@ -40,7 +40,6 @@ PRODUCT_LOCALES += hdpi
 
 # For RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    phone.ril.classname = com.android.internal.telephony.SamsungRIL \
     ro.telephony.ril_class=samsung
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/p1-common/overlay
@@ -76,7 +75,6 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml
 
 PRODUCT_COPY_FILES += \
-    device/samsung/p1-common/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/samsung/p1-common/prebuilt/usr/keylayout/p1_keyboard.kl:system/usr/keylayout/p1_keyboard.kl \
     device/samsung/p1-common/prebuilt/usr/keylayout/AT42QT602240_Touchscreen.kl:system/usr/keylayout/AT42QT602240_Touchscreen.kl
 
