@@ -82,3 +82,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/p1-common/prebuilt/mke2fs:utilities/mke2fs
 
+# common init.rc / hw specific version is in respective device trees
+PRODUCT_COPY_FILES += \
+    device/samsung/p1-common/initramfs/init.rc:root/init.rc
+
