@@ -60,6 +60,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     setup_fs \
+    bmlwrite \
     libaudio
 
 # Install the features available on this device.

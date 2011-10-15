@@ -1,10 +1,11 @@
+#
 # Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,9 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(findstring galaxytab, $(TARGET_DEVICE)),galaxytab)
+import os, sys
 
-include $(call all-named-subdir-makefiles, setup_fs libcamera ../aries-common/sec_mm ../aries-common/libstagefrighthw ../aries-common/bmlutils liboverlay libaudio liblights)
+LOCAL_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+RELEASETOOLS_DIR = os.path.abspath(os.path.join(LOCAL_DIR, '../../../build/tools/releasetools'))
 
-endif
+# Add releasetools directory to python path
+sys.path.append(RELEASETOOLS_DIR)
 
+from common import *
+
+def load_module_from_file(module_name, filename):
+    import imp
+    f = open(filename, 'r')
+    module = imp.load_module(module_name, f, filename, ('', 'U', 1))
+    f.close()
+    return module
