@@ -86,3 +86,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/p1-common/initramfs/init.rc:root/init.rc
 
+# Wifi
+PRODUCT_COPY_FILES += \
+    device/samsung/p1-common/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wpa_supplicant.conf
