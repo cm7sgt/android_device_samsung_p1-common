@@ -59,6 +59,10 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 PRODUCT_PACKAGES += \
+    overlay.s5pc110 \
+    lights.s5pc110
+
+PRODUCT_PACKAGES += \
     setup_fs \
     bmlwrite \
     libaudio
@@ -84,7 +88,8 @@ PRODUCT_COPY_FILES += \
 
 # common init.rc / hw specific version is in respective device trees
 PRODUCT_COPY_FILES += \
-    device/samsung/p1-common/initramfs/init.rc:root/init.rc
+    device/samsung/p1-common/initramfs/init.rc:root/init.rc \
+    device/samsung/p1-common/initramfs/ueventd.rc:root/ueventd.rc
 
 # Wifi
 PRODUCT_COPY_FILES += \

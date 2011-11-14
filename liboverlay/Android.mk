@@ -34,7 +34,7 @@ LOCAL_SHARED_LIBRARIES := liblog libcutils
 LOCAL_SRC_FILES := ../../aries-common/liboverlay/v4l2_utils.c \
                    ../../aries-common/liboverlay/overlay.cpp
 
-LOCAL_MODULE := overlay.$(TARGET_BOOTLOADER_BOARD_NAME)
+LOCAL_MODULE := overlay.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
