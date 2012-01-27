@@ -1,6 +1,6 @@
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=200 \
+    ro.sf.lcd_density=240 \
     ro.sf.hwrotation=90 \
     wifi.interface=eth0 \
     wifi.supplicant_scan_interval=20 \
