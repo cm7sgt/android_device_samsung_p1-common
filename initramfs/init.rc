@@ -296,7 +296,7 @@ on boot
     setprop ro.HIDDEN_APP_MEM 7168
     setprop ro.EMPTY_APP_MEM 8192
 
-    setprop ro.bt.bdaddr_path "/data/misc/bluetoothd/bt_addr"
+    start bdaddr
     setprop wifi.interface "eth0"
 
 # Write value must be consistent with the above properties.
@@ -494,6 +494,11 @@ service dbus /system/bin/dbus-daemon --system --nofork
     socket dbus stream 660 bluetooth bluetooth
     user root
     group root net_bt_admin
+
+service bdaddr /system/bin/bdaddr_read
+    user root
+    disabled
+    oneshot
 
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --pcm_role slave --baudrate 3000000 --patchram /system/bin/BCM4329B1_002.002.023.0534.0590.hcd /dev/s3c2410_serial0
     user bluetooth

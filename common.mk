@@ -63,6 +63,7 @@ PRODUCT_PACKAGES += \
     lights.s5pc110
 
 PRODUCT_PACKAGES += \
+    bdaddr_read \
     setup_fs \
     bmlwrite \
     libaudio

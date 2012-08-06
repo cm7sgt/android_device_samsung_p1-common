@@ -14,7 +14,7 @@
 
 ifeq ($(findstring galaxytab, $(TARGET_DEVICE)),galaxytab)
 
-include $(call all-named-subdir-makefiles, setup_fs libcamera ../aries-common/sec_mm ../aries-common/libstagefrighthw ../aries-common/bmlutils liboverlay libaudio liblights)
+include $(call all-named-subdir-makefiles, setup_fs libcamera ../aries-common/sec_mm ../aries-common/libstagefrighthw ../aries-common/bmlutils ../aries-common/bdaddr_read liboverlay libaudio liblights)
 
 endif
 
